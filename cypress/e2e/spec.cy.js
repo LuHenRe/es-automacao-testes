@@ -7,20 +7,20 @@ describe('TODOMvc App', () => {
     cy.visit(''); 
 
     cy.get('[data-cy=todo-input]')
-      .type('TP2 de Engenharia de Software{enter}');
+      .type('Engenharia de Software{enter}');
 
     cy.get('[data-cy=todos-list]')
       .children()
       .should('have.length', 1) 
       .first()
-      .should('have.text', 'TP2 de Engenharia de Software'); 
+      .should('have.text', 'Engenharia de Software'); 
   });
 
   it('Insere e deleta uma tarefa', () => {
     cy.visit('');
 
     cy.get('[data-cy=todo-input]')
-      .type('TP2 de Engenharia de Software{enter}');
+      .type('Engenharia de Software{enter}');
 
     cy.get('[data-cy=todos-list]')
       .children()
@@ -39,8 +39,8 @@ describe('TODOMvc App', () => {
     cy.visit(''); 
 
     cy.get('[data-cy=todo-input]')
-      .type('TP2 de ES{enter}')
-      .type('Prova de ES{enter}');
+      .type('Atividade de ES{enter}')
+      .type('Artigo de ES{enter}');
 
     cy.get('[data-cy=todos-list] > li [data-cy=toggle-todo-checkbox]')
       .first()
@@ -52,7 +52,7 @@ describe('TODOMvc App', () => {
       .children()
       .should('have.length', 1)
       .first()
-      .should('have.text', 'Prova de ES');
+      .should('have.text', 'Artigo da ES');
 
     cy.get('[data-cy=filter-completed-link')
       .click();
@@ -60,7 +60,7 @@ describe('TODOMvc App', () => {
       .children()
       .should('have.length', 1)
       .first()
-      .should('have.text', 'TP2 de ES');
+      .should('have.text', 'Atividade de ES');
 
     cy.get('[data-cy=filter-all-link')
       .click();
@@ -68,4 +68,6 @@ describe('TODOMvc App', () => {
       .children()
       .should('have.length', 2);
   });
+
+  
 });
